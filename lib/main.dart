@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:myapp/views/brief_list.dart';
 
-void main() => runApp(MaterialApp(
-    home:  Scaffold(
-      appBar: AppBar(
-        title: Text('Simplonline',
-        style: TextStyle(
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-        ),),
-        backgroundColor: Colors.red,
+
+
+void main() {
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      body: Center(
-        child: Text('Briefs'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
-        child: Text('click'),
-        backgroundColor: Colors.red,
-      ) ,
-    ),
-  ));
+      home: BriefList(),
+    );
+  }
+}
